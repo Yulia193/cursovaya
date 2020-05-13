@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <link href="templatemo_style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        function OnSelectionChange (select) {
+            var selectedOption = select.options[select.selectedIndex];
+            alert ("Выбранная опция - это " + selectedOption.value);
+        }
+    </script>
+</head>
+<body>
+<div id="templatemo_container">
+
+<div id="templatemo_menu">
+      <ul>  
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="newreleases.html">New Releases</a></li>
+            <li><a href="books.html">Books</a></li>            
+            <li><a href="aboutus.html">About us</a></li> 
+            <li><a href="delivery.html">Delivery</a></li> 
+            <li><a href="payment.html">Payment</a></li> 
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="stocks.html">Stocks </a></li>
+              <li><a href="cart.html"><img src="img/Логотип-корзины.jpg" height="25px" width="25px" alt=""> </a></li>
+      </ul>
+    </div> <!-- end of menu -->
+    <div id="templatemo_header">
+      <div id="templatemo_head">
+          <p>
+                Book 
+                <p>House</p>
+          </p>
+        </div>
+        <div id="templatemo_new_books">
+          <p>
+                 Читай новые книги
+                 вместе с нами!
+          </p>
+            <a href="newreleases.html" style="margin-left: 50px;">Подробнее...</a>
+        </div>
+    </div> <!-- end of header -->
+
+
+ <form onSubmit = "return checkform(this)" >
+<table>
+ <tr>
+   <td > <label for="name"> ФИО</label></td>
+  <td > <input type="text" name="name" placeholder="Фамилия Имя Отчество" pattern="[А-Яа-я]*?\s[А-Яа-я]*?\s[А-Яа-я]*" required > </td>
+  <div id="error"></div>
+  </tr>
+<tr>
+   <td > <label for="input"> Введите свой e-mail</label></td>
+  <td > <input type="email" id="input" required>
+
+</td> 
+
+   </tr>
+   <tr>
+   <td > <label for="pass1"> Введите свой номер телефона</label></td>
+  <td > <input type="tel" name="phone" placeholder="+38(099) 111-11-11"  pattern="+38\([0-9]{3}\)\s{1}\[0-9]{3}-[0-9]{2}-[0-9]{2}"  maxlength="12" required> </td> 
+  </tr>
+   <tr >
+    <td ><label for="radio">Возрастной диапазон</label></td>
+    <td ><input type="radio" name="radio" value="yes" required>до 18 лет
+<input type="radio" name="radio" value="no">18+</td>
+</tr>
+<tr>
+    <td ><label for="type">Город</label></td>
+    <td>
+        <select onchange="OnSelectionChange (this)" name="type" size="1">
+<option value="Киев">Киев</option>
+<option  value="Одесса">Одесса</option>
+<option value="Харьков">Харьков</option>
+<option value="Львов">Львов</option>
+<option  value="Днепр">Днепр</option>
+<option value="Запорожье">Запорожье</option>
+<option value="Северодонецк">Северодонецк</option>
+<option  value="Старобельск">Старобельск</option>
+<option value="Кировоград">Кировоград</option>
+</select></td>
+        </tr>
+ <tr>
+    <td ><label for="pass4">Способ доставки</label> </td>
+<td > <input type="checkbox" name="pass4" >Новая почта (30-35 грн)
+<input type="checkbox" name="pass4" >Укрпочта (0-35 грн)
+<input type="checkbox" name="pass4">Justin (15 грн)</td>
+</tr>
+
+<tr>
+    <td ><label for="pass3">Способ оплаты</label></td>
+ <td ><select size="3"name="pass3" required> 
+    <option >Оплата онлайн</option>
+    <option >Наличными</option>
+    <option >Предоплата</option></select></td>
+</tr>
+
+<tr>
+    <td ><label for="pass7">Пожелания к заказу</label></td>
+ <td > <textarea rows="6" cols="50" name="pass7" ></textarea>
+</td>
+ </tr></table>
+
+   <center> <td colspan="2"><input  type="submit" value="Подтвердить заказ">
+   <input type="reset" value="Очистить данные"></td></center>
+
+
+
+  <script type="text/javascript">
+function checkform(f) {
+  var errMSG = ""; 
+  // цикл ниже перебирает все элементы в объекте f, переданном в качестве параметра функции, в данном случае - наша форма.            
+  for (var i = 0; i<f.elements.length; i++) 
+    // если текущий элемент имеет атрибут required, т.е. обязательный для заполнения
+    if (null!=f.elements[i].getAttribute("required")) 
+       // проверяем, заполнен ли он в форме
+        if (isEmpty(f.elements[i].value)) // пустой
+            errMSG += "  " + f.elements[i].name + "\n"; // формируем сообщение об ошибке, перечисляя незаполненные поля. Если сообщение об ошибке не пусто, выводим его, и возвращаем false 
+        if ("" != errMSG) {
+            alert("Не заполнены обязательные поля:\n" + errMSG);
+            return false;
+        }
+}
+</script>
+<div id="error"></div>
+<script>
+input.onblur = function() {
+  if (!input.value.includes('@')) { // не email
+    input.classList.add('invalid');
+    error.innerHTML = 'Пожалуйста, введите правильный email.'
+  }
+}
+input.onfocus = function() {
+  if (this.classList.contains('invalid')) {
+    // удаляем индикатор ошибки, т.к. пользователь хочет ввести данные заново
+    this.classList.remove('invalid');
+    error.innerHTML = "";
+  }
+}
+</script>
+
+<div id="templatemo_footer">
+    
+         <a href="index.html">Home</a> | <a href="newreleases.html">New Releases</a> | <a href="books.html">Books</a> | <a href="aboutus.html">About us</a> | <a href="delivery.html">Delivery</a>| <a href="payment.html">Payment </a> | <a href="contact.html">Contact </a>| <a href="stocks.html">Stocks </a> | <a href="index.html"><strong>Book House</strong></a> </div> </div>
+</body>
+</html>

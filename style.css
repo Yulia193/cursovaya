@@ -1,0 +1,291 @@
+#buy_now_button{
+  font-size: 
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+  font-family: Verdana, Arial, san-serif;
+  font-size: 13px;
+  color: #000000;
+  background: #BA55D3;
+}
+/* footer */
+#templatemo_footer {
+  clear: both;
+  width: 100%;
+  padding: 20px 0px 20px 0;
+  text-align: center;
+  border-top: 1px solid #25211e;
+  color: #999;
+  background-color: #111110;
+}
+
+#templatemo_footer a{
+  color: #fff;
+  font-weight: normal;
+}
+/* end of footer */
+.shopping-cart {
+  width: 800px;
+  height: 100%;
+  margin: 10px auto;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  height: 60px;
+  border-bottom: 1px solid #8B008B;
+  padding: 20px 20px;
+  color: #5E6977;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.item {
+  padding: 20px 30px;
+  height: 180px;
+  display: flex;
+  border-bottom:  1px solid #8B008B;
+}
+
+/* Buttons -   Like */
+.buttons {
+  position: relative;
+  padding-top: 30px;
+  margin-right: 60px;
+}
+
+.like-btn {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  display: inline-block;
+  background: url('img/twitter-heart.png');
+  width: 60px;
+  height: 60px;
+  background-size: 2900%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.is-active {
+  animation-name: animate;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(28);
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+  0%   { background-position: left;  }
+  50%  { background-position: right; }
+  100% { background-position: right; }
+}
+
+/* Product Image */
+.image {
+  margin-right: 50px;
+}
+
+/* Product Description */
+.description {
+  padding-top: 10px;
+  margin-right: 60px;
+  width: 115px;
+}
+
+.description span {
+  display: block;
+  font-size: 14px;
+  color: #43484D;
+  font-weight: 400;
+}
+
+.description span:first-child {
+  margin-bottom: 5px;
+}
+.description span:last-child {
+  font-weight: 300;
+  margin-top: 8px;
+  color: #86939E;
+}
+
+/* Product Quantity */
+.quantity {
+  padding-top: 20px;
+  margin-right: 60px;
+}
+.quantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+
+button[class*=btn] {
+  width: 30px;
+  height: 30px;
+  background-color: #E1E8EE;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.minus-btn img {
+  margin-bottom: 3px;
+}
+.plus-btn img {
+  margin-top: 2px;
+}
+button:focus,
+input:focus {
+  outline:0;
+}
+
+/* Total Price */
+.total-price {
+  width: 83px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+.total-price span {
+display: block;
+  font-size: 14px;
+font-weight: 300;
+  margin-top: 8px;
+  color: #86939E;
+}
+
+/* Responsive */
+@media (max-width: 100%) {
+  .shopping-cart {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .item {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .image img {
+    width: 100px;
+    height: 150px;
+  }
+  .image,
+  .quantity,
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 6px 0;
+  }
+  .buttons {
+    margin-right: 20px;
+  }
+}
+
+/* menu */
+
+#templatemo_menu {
+  clear: both;
+  width: 960px;
+  height: 45px;
+  background: url(img/фонменю.jpg) no-repeat;
+}
+
+#templatemo_menu ul {
+  padding: 13px 0 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+#templatemo_menu ul li{
+  display: inline;
+}
+
+#templatemo_menu ul li a{
+  float: left;
+  padding: 0 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #969547;
+}
+
+#templatemo_menu li a:hover, #templatemo_menu li .current{
+  color: #fcf88e;
+}
+
+/* end of menu*/
+
+/* header */
+#templatemo_header {
+  clear: both;
+  width: 960px;
+  height: 285px;
+  padding: 0;
+  margin: 0;
+  background: url(img/фонкнига.jpg) no-repeat;
+}
+
+#templatemo_header a,a:hover {
+  color: #000000;
+}
+
+#templatemo_head p{
+margin: 0 0 20px 0;
+font-size: 31px;
+font-style: initial;
+}
+#templatemo_header #templatemo_head {
+  float: left;  
+  margin-top: 40px;
+  margin-left: 40px;
+  width: 140px;
+}
+
+#templatemo_header #templatemo_new_books {
+  float: left;
+  margin-top: 90px; 
+  margin-left: 505px;
+  width: 180px;
+}
+#templatemo_new_books a {
+  font-size: 14px;
+}
+#templatemo_new_books  p {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+}
+/* end of header */
+#templatemo_container{
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 0px;
+  background: #1c1c1b url(img/фон1.jpg) repeat-y;
+}
+a:link, a:visited { color: #e6e154; text-decoration: none; font-weight: bold;} 
+a:active, a:hover { color: #e6e154; text-decoration: underline;}
+.layer {
+    overflow: scroll; /* Добавляем полосы прокрутки */
+    width: 800px; /* Ширина блока */
+    height: 400px; /* Высота блока */
+    padding: 5px; /* Поля вокруг текста */
+    
+   } 
+ 
